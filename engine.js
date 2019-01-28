@@ -112,8 +112,8 @@ module.exports = function (options) {
         scope = scope ? '(' + answers.scope.trim() + ')' : '';
 
         // Hard limit this line
-        var issues = answers.issues ? wrap(answers.issues, wrapOptions) : '';
-        var head = (issues + ': ' + answers.type + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
+        var issues = answers.issues ? wrap(answers.issues, wrapOptions) + ': ' : '';
+        var head = (issues + answers.type + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
 
         // Wrap these lines at 100 characters
         var body = wrap(answers.body, wrapOptions);
